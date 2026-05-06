@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
   margin: 0;
   padding: 0;
@@ -73,22 +72,4 @@ body {
   font-family: 'Space Mono', monospace;
   font-size: 0.7rem;
   color: #888888;
-=======
-*{
-    padding: 0;
-    margin: 0;
-}
-
-.container-fluid{
-    background-color: #2C187C;
-}
-
-
-#titolo{
-    font-family: 'Cal Sans', Arial, Helvetica, sans-serif;
-}
-
-#navbarNav{
-    margin-left: 1400px;
->>>>>>> bb259cb95dcded545a9f437c15e7d478e512909d
 }
