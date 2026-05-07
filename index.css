@@ -66,6 +66,14 @@ body {
     transform: scale(1.1) translateZ(0);
 }
 
+.card{
+  background-color: #080808;
+  color: white;
+  margin: 0 auto;
+  width: 900px;
+  height: 500px;
+}
+
 .footer-strip {
   text-align: center;
   padding: 1rem;
