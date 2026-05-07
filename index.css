@@ -7,7 +7,7 @@
 body {
     transition: 0.3s;
     font-family: 'Syne', sans-serif;
-    background-color: #151515;
+    background-color: #121113;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -68,6 +68,7 @@ body {
 }
 
 .card{
+  transition: 0.2s;
   background-color: #080808;
   color: white;
   margin: 0 auto;

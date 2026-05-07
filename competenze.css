@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+    transition: 0.3s;
+    font-family: 'Syne', sans-serif;
+    background-color: #121113;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.navbar {
+  transition: 0.2s;
+  background-color: #231942;
+  padding: 0 2rem;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 20pt;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1rem !important;
+}
+
+.nav-link:hover {
+  color: #7c6aff !important;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.btn-dark{
+    background-color: white;
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    left: 114rem;
+    top: 53.5rem;
+    transition: transform 0.2s;
+}
+
+.btn-dark:hover{
+    background-color: white;
+    opacity: 100;
+    transform: scale(1.1) translateZ(0);
+}
+
+.footer-strip {
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: #888888;
+}
