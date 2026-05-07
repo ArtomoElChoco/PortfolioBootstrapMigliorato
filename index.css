@@ -7,13 +7,14 @@
 body {
     transition: 0.3s;
     font-family: 'Syne', sans-serif;
-    background-color: #151414;
+    background-color: #151515;
     min-height: 100vh;
     overflow-x: hidden;
 }
 
 .navbar {
-  background-color: #1a1464;
+  transition: 0.2s;
+  background-color: #231942;
   padding: 0 2rem;
   height: 56px;
 }
