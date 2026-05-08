@@ -5,11 +5,10 @@
 }
 
 body {
-    transition: 0.3s;
-    font-family: 'Syne', sans-serif;
-    background-color: #121113;
-    min-height: 100vh;
-    overflow-x: hidden;
+  transition: 0.3s;
+  background-color: #121113;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -51,29 +50,93 @@ body {
   stroke-linejoin: round;
 }
 
-.btn-dark{
-    background-color: white;
-    width: 70px;
-    height: 70px;
-    position: fixed;
-    left: 114rem;
-    top: 53.5rem;
-    transition: transform 0.2s;
+.sezione {
+  height: calc(100vh - 56px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.btn-dark:hover{
-    background-color: white;
-    opacity: 100;
-    transform: scale(1.1) translateZ(0);
-}
-
-.card{
+.card {
   transition: 0.2s;
-  background-color: #080808;
-  color: white;
-  margin: 0 auto;
-  width: 900px;
-  height: 500px;
+  background-color: #000000;
+  border: none;
+  width: 800px;
+  height: 75vh;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-title {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  font-size: 2.5rem;
+  color: #c9c9f0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+.card-text {
+  font-family: 'Trebuchet MS', Helvetica, sans-serif;
+  font-size: 1rem;
+  color: #ffffff;
+  text-align: center;
+}
+
+.prosegui-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding-bottom: 1rem;
+}
+
+.prosegui {
+  color: #ffffff;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.2em;
+  margin: 0;
+}
+
+.btn-freccia {
+  background-color: #231942;
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-freccia:hover {
+  background-color: #7c6aff;
+  transform: scale(1.1) translateZ(0);
+}
+
+.btn-freccia svg {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-dark {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  transition: transform 0.2s;
+}
+
+.btn-dark:hover {
+  background-color: white;
+  transform: scale(1.1) translateZ(0);
 }
 
 .footer-strip {
