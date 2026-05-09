@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
   transition: 0.3s;
   background-color: #121113;
@@ -96,7 +101,7 @@ body {
 .prosegui {
   color: #ffffff;
   font-family: 'Trebuchet MS', sans-serif;
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   letter-spacing: 0.2em;
   margin: 0;
 }
@@ -137,6 +142,17 @@ body {
 .btn-dark:hover {
   background-color: white;
   transform: scale(1.1) translateZ(0);
+}
+
+.bi-instagram{
+  margin: 0 auto;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; /* margine tra le icone */
 }
 
 .footer-strip {
