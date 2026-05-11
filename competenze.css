@@ -1,22 +1,24 @@
+/* ── Reset & Base ─────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
 
 body {
-    transition: 0.3s;
-    font-family: 'Syne', sans-serif;
-    background-color: #121113;
-    min-height: 100vh;
-    overflow-x: hidden;
+  transition: 0.3s;
+  font-family: 'Syne', sans-serif;
+  background-color: #121113;
+  min-height: 100vh;
+  overflow-x: hidden;
 }
 
+/* ── Navbar (identica all'altra pagina) ───────────── */
 .navbar {
   transition: 0.2s;
   background-color: #231942;
@@ -56,6 +58,7 @@ body {
   stroke-linejoin: round;
 }
 
+/* ── Theme Toggle Button ──────────────────────────── */
 .btn-dark {
   background-color: white;
   width: 70px;
@@ -71,79 +74,154 @@ body {
   transform: scale(1.1) translateZ(0);
 }
 
-#wrapper{
-  margin: 0 auto;
-  width: 607px;
+/* ── Page wrapper ─────────────────────────────────── */
+#wrapper {
+  --card-size: 200px;
+  --gap: 20px;
+  --group-width: calc(var(--card-size) * 3 + var(--gap) * 2);
+  width: var(--group-width);
+  margin: 50px auto 80px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
 }
 
-.card{
-  
-  padding: 0;
-  display: inline-block;
-  width: 200px;
-  height: 200px;
+/* ── Skill Group ──────────────────────────────────── */
+.skill-group {
+  display: flex;
+  flex-direction: column;
 }
 
-#cs{
-  background-image: url(./img/Csharp.png);
+.group-label {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 0.75rem;
+  color: #7c6aff;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+
+.cards-row {
+  display: flex;
+  gap: var(--gap);
+}
+
+/* ── Skill Cards ──────────────────────────────────── */
+.skill-card {
+  width: var(--card-size);
+  height: var(--card-size);
+  background-color: #000000;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 10px 12px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-size: 60%;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center 38%;
 }
 
-#c{  
-  background-image: url(./img/C.png);
-  background-repeat: no-repeat;
-  background-position: center;
+.skill-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 55%);
+  pointer-events: none;
 }
 
-#sh{
-  background-image: url(./img/bash.png);
-  background-repeat: no-repeat;
-   
-  background-position: center;
+.skill-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(124, 106, 255, 0.3);
 }
 
-#html{
-  background-image: url(./img/html.webp);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.card-label {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #c9c9f0;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  position: relative;
+  z-index: 1;
+  transition: color 0.2s;
 }
 
-#css{
-  background-image: url(./img/css.webp);
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
+.skill-card:hover .card-label {
+  color: #7c6aff;
 }
 
-#js{
-  background-image: url(./img/js.png);
-  background-repeat: no-repeat;
-  background-position: center;
+/* Background images */
+#cs   { background-image: url(./img/Csharp.png); }
+#c    { background-image: url(./img/C.png); }
+#sh   { background-image: url(./img/bash.png); }
+#html { background-image: url(./img/html.webp); background-size: 55%; }
+#css  { background-image: url(./img/css.webp);  background-size: 55%; }
+#js   { background-image: url(./img/js.png); }
+#jv   { background-image: url(./img/java.png); }
+#ard  { background-image: url(./img/arduino.png); background-size: 45%; }
+#tink { background-image: url(./img/tinkercad.webp); background-size: 50%; }
+
+/* ── Accordion ────────────────────────────────────── */
+.skill-accordion {
+  width: 100%;
+  margin-top: 10px;
 }
 
-#jv{
-  background-image: url(./img/java.png);
-  background-repeat: no-repeat;
-   
-  background-position: center;
+.accordion-item {
+  background-color: #000000;
+  border: none;
+  border-radius: 0 !important;
 }
 
-#ard{
-  background-image: url(./img/arduino.png);
-  background-repeat: no-repeat;
-   
-  background-position: center;
+.accordion-button {
+  background-color: #1a1820;
+  color: #c9c9f0;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 13px 18px;
+  border: none;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  transition: color 0.2s, background-color 0.2s;
 }
 
-#tink{
-  background-image: url(./img/tinkercad.webp);
-  background-repeat: no-repeat;
-   
-  background-position: center;
+.accordion-button:not(.collapsed) {
+  background-color: #231942;
+  color: #7c6aff;
 }
 
+.accordion-button::after {
+  filter: invert(60%) sepia(40%) saturate(500%) hue-rotate(215deg) brightness(1.1);
+}
+
+.accordion-button:hover {
+  color: #7c6aff;
+  background-color: #231942;
+}
+
+.accordion-body {
+  background-color: #0d0c10;
+  color: #aaaacc;
+  font-family: 'Trebuchet MS', sans-serif;
+  font-size: 0.9rem;
+  line-height: 1.75;
+  padding: 16px 20px;
+  border-top: 1px solid #2a2540;
+}
+
+.accordion-body strong {
+  color: #c9c9f0;
+}
+
+/* ── Footer (identico all'altra pagina) ───────────── */
 footer {
   background-color: #171A21;
   color: white;
