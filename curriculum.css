@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+body {
+  transition: 0.3s;
+  background-color: #121113;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.navbar {
+  transition: 0.2s;
+  background-color: #231942;
+  padding: 0 2rem;
+  height: 56px;
+}
+
+.navbar-brand {
+  font-family: 'Trebuchet MS', sans-serif;
+  font-weight: 800;
+  font-size: 20pt;
+  color: white !important;
+}
+
+.nav-link {
+  color: white !important;
+  font-family: 'Syne', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0 1rem !important;
+}
+
+.nav-link:hover {
+  color: #7c6aff !important;
+}
+
+.nav-icon {
+  width: 20px;
+  height: 20px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.btn-dark {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 0.9rem;
+  right: 1rem;
+  transition: transform 0.2s;
+}
+
+.btn-dark:hover {
+  background-color: white;
+  transform: scale(1.1) translateZ(0);
+}
+
+.title{
+    transition: 0.2s;
+    text-align: center;
+    color: white;
+}
+
+.card{
+    margin: 0 auto;
+    width: 700px;
+    height: 1000px;
+}
+
+footer {
+  background-color: #171A21;
+  color: white;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+}
+
+footer .container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+footer p {
+  margin-bottom: 0;
+}
+
+.icons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.icons-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.icon {
+  transition: 0.2s;
+}
+
+.icon:hover {
+  transform: scale(1.2) translateZ(0);
+}
+
+.social {
+  color: #777;
+  font-size: 10pt;
+  text-align: center;
+}
+
+.bi-instagram {
+  margin: 0 auto;
+}
+
+.footer-strip {
+  text-align: center;
+  padding: 1rem;
+  font-family: 'Space Mono', monospace;
+  font-size: 0.7rem;
+  color: #888888;
+}

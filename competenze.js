@@ -5,6 +5,7 @@ const body = document.getElementsByTagName("body")[0]
 const sun = document.getElementsByClassName("size-6")[0]
 const navbar = document.getElementById("navbar")
 
+
 btn.addEventListener("click", CambiaColore)
 
 let theme = localStorage.getItem("colore")
