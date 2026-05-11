@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
 body {
     transition: 0.3s;
     font-family: 'Syne', sans-serif;
@@ -51,20 +56,92 @@ body {
   stroke-linejoin: round;
 }
 
-.btn-dark{
-    background-color: white;
-    width: 70px;
-    height: 70px;
-    position: fixed;
-    left: 114rem;
-    top: 53.5rem;
-    transition: transform 0.2s;
+.btn-dark {
+  background-color: white;
+  width: 70px;
+  height: 70px;
+  position: fixed;
+  bottom: 0.9rem;
+  right: 1rem;
+  transition: transform 0.2s;
 }
 
-.btn-dark:hover{
-    background-color: white;
-    opacity: 100;
-    transform: scale(1.1) translateZ(0);
+.btn-dark:hover {
+  background-color: white;
+  transform: scale(1.1) translateZ(0);
+}
+
+#wrapper{
+  margin: 0 auto;
+  width: 607px;
+}
+
+.card{
+  
+  padding: 0;
+  display: inline-block;
+  width: 200px;
+  height: 200px;
+}
+
+#cs{
+  background-image: url(./img/Csharp.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#c{  
+  background-image: url(./img/C.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#sh{
+  background-image: url(./img/bash.png);
+  background-repeat: no-repeat;
+   
+  background-position: center;
+}
+
+#html{
+  background-image: url(./img/html.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#css{
+  background-image: url(./img/css.webp);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+#js{
+  background-image: url(./img/js.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+#jv{
+  background-image: url(./img/java.png);
+  background-repeat: no-repeat;
+   
+  background-position: center;
+}
+
+#ard{
+  background-image: url(./img/arduino.png);
+  background-repeat: no-repeat;
+   
+  background-position: center;
+}
+
+#tink{
+  background-image: url(./img/tinkercad.webp);
+  background-repeat: no-repeat;
+   
+  background-position: center;
 }
 
 footer {
