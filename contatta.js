@@ -13,7 +13,7 @@ const PUBLIC_KEY  = "IL_TUO_PUBLIC_KEY"
 const SERVICE_ID  = "IL_TUO_SERVICE_ID"
 const TEMPLATE_ID = "IL_TUO_TEMPLATE_ID"
 
-emailjs.init(PUBLIC_KEY)
+emailjs.init("Y__YWVgnVL-9a-Wm5")
 
 function inviaEmail() {
   const nome     = document.getElementById("nome").value.trim()
@@ -35,7 +35,7 @@ function inviaEmail() {
     message:    messaggio
   }
 
-  emailjs.send(SERVICE_ID, TEMPLATE_ID, params)
+  emailjs.send("service_prwhife", "template_9z5n9vg", params)
     .then(() => {
       mostraToast("✅ Messaggio inviato con successo!")
       document.getElementById("nome").value = ""

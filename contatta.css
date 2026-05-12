@@ -66,16 +66,10 @@ body {
   bottom: 0.9rem;
   right: 1rem;
   transition: transform 0.2s;
-  border-radius: 8px;
-  border: none;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
 }
 
 .btn-dark:hover {
-  background-color: white !important;
+  background-color: white;
   transform: scale(1.1) translateZ(0);
 }
 
@@ -223,6 +217,7 @@ body {
 .info-card {
   display: flex;
   align-items: center;
+  width: 300px;
   gap: 16px;
   background-color: #1a1820;
   border: 1px solid #2e2e3a;

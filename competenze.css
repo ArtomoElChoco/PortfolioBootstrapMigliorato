@@ -114,17 +114,13 @@ body {
   justify-content: flex-start;
   transition: transform 0.2s, box-shadow 0.2s;
   background-repeat: no-repeat;
-  background-position: center 38%;
+  background-position: center;
 }
 
 .skill-card::after {
   content: '';
   position: absolute;
   background: "black";
-}
-
-.skill-card:hover {
-  
 }
 
 .card-label {
