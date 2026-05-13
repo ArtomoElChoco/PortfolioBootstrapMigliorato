@@ -11,18 +11,20 @@ a {
 
 body {
   transition: background-color 0.3s, color 0.3s;
-  font-family: 'Syne', sans-serif;
   background-color: #121113;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
-/* ── Navbar ───────────────────────────────────────── */
 .navbar {
   transition: 0.2s;
   background-color: #231942;
-  padding: 0 2rem;
+  padding: 0 1rem;
   height: 56px;
+}
+
+.navbar-collapse.show ~ * {
+  margin-top: 0;
 }
 
 .navbar-brand {
@@ -30,6 +32,18 @@ body {
   font-weight: 800;
   font-size: 20pt;
   color: white !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-collapse {
+  background-color: #231942;
 }
 
 .nav-link {
@@ -40,7 +54,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0 1rem !important;
+  padding: 0.6rem 1rem !important;
 }
 
 .nav-link:hover {
@@ -57,7 +71,10 @@ body {
   stroke-linejoin: round;
 }
 
-/* ── Theme button ─────────────────────────────────── */
+#navbarMenu{
+  transition: 0.2s;
+}
+
 .btn-dark {
   background-color: white;
   width: 70px;
@@ -73,7 +90,6 @@ body {
   transform: scale(1.1) translateZ(0);
 }
 
-/* ── Toast ────────────────────────────────────────── */
 .toast {
   background-color: #231942;
   color: white;
@@ -85,7 +101,6 @@ body {
   border-color: #ff4d4d;
 }
 
-/* ── Main layout ──────────────────────────────────── */
 #wrapper {
   display: flex;
   gap: 60px;
@@ -93,7 +108,6 @@ body {
   margin: 60px auto 80px;
 }
 
-/* ── Left panel (form) ────────────────────────────── */
 #left-panel {
   flex: 1;
 }
@@ -140,8 +154,8 @@ body {
 
 .field-group input,
 .field-group textarea {
-  background-color: #1a1820;
-  border: 1px solid #2e2e3a;
+  background-color: #000000;
+  border: none;
   color: #e0e0f0;
   font-family: 'Trebuchet MS', sans-serif;
   font-size: 0.95rem;
@@ -150,16 +164,6 @@ body {
   outline: none;
   transition: border-color 0.2s, background-color 0.3s, color 0.3s;
   resize: none;
-}
-
-.field-group input:focus,
-.field-group textarea:focus {
-  border-color: #7c6aff;
-}
-
-.field-group input::placeholder,
-.field-group textarea::placeholder {
-  color: #454555;
 }
 
 #sendBtn {
@@ -177,7 +181,7 @@ body {
   align-items: center;
   gap: 10px;
   border-radius: 4px;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: 0.2s;
   align-self: flex-start;
 }
 
@@ -188,7 +192,6 @@ body {
 
 #sendBtn:hover {
   background-color: #7c6aff;
-  transform: translateY(-2px);
 }
 
 #sendBtn:disabled {
@@ -197,7 +200,6 @@ body {
   transform: none;
 }
 
-/* ── Right panel (info) ───────────────────────────── */
 #right-panel {
   width: 280px;
   flex-shrink: 0;
@@ -219,8 +221,8 @@ body {
   align-items: center;
   width: 300px;
   gap: 16px;
-  background-color: #1a1820;
-  border: 1px solid #2e2e3a;
+  background-color: #000000;
+  border: none;
   border-radius: 4px;
   padding: 16px;
   margin-bottom: 14px;
@@ -277,8 +279,8 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  background-color: #1a1820;
-  border: 1px solid #2e2e3a;
+  background-color: #000000;
+  border: none;
   color: #aaaacc;
   padding: 10px 14px;
   border-radius: 4px;
@@ -296,7 +298,6 @@ body {
   color: #7c6aff;
 }
 
-/* ── Footer ───────────────────────────────────────── */
 footer {
   background-color: #171A21;
   color: white;
@@ -353,7 +354,6 @@ footer p {
   color: #888888;
 }
 
-/* ── Light theme overrides ────────────────────────── */
 body.light .page-title      { color: #1a1a2e; }
 body.light .page-sub        { color: #555566; }
 body.light .field-group label { color: #444455; }
@@ -382,4 +382,95 @@ body.light .social-btn {
   background-color: #f0f0f8;
   border-color: #ccccdd;
   color: #333344;
+}
+
+body.light .info-icon {
+  background-color: #231942;
+}
+
+body.light .info-icon svg {
+  stroke: #7c6aff;
+}
+
+body.light .social-btn svg {
+  stroke: #7c6aff;
+}
+
+body.light .social-btn {
+  color: #ffffff;
+}
+
+@media (max-width: 991px) {
+  
+  .navbar {
+    height: auto;
+    min-height: 56px;
+  }
+
+  .navbar-collapse {
+    padding-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+  .me-auto{
+    display: none;
+  }
+
+  footer{
+    height: 100px;
+  }
+
+  .icons{
+    top: 3px;
+  }
+
+  #wrapper{
+    max-width: 100%;
+    flex-direction: column;
+  }
+
+}
+
+@media (max-width: 700px){
+    .btn-dark{
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .sezione {
+    padding: 1.5rem 0.5rem;
+  }
+
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .me-auto {
+    text-align: center;
+  }
+
+  .icons {
+    position: static;
+    transform: none;
+  }
+
+  .footer-spacer {
+    display: none;
+  }
 }

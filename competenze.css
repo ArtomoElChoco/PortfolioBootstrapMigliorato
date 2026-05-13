@@ -1,4 +1,3 @@
-/* ── Reset & Base ─────────────────────────────────── */
 * {
   margin: 0;
   padding: 0;
@@ -12,7 +11,6 @@ a {
 
 body {
   transition: 0.3s;
-  font-family: 'Syne', sans-serif;
   background-color: #121113;
   min-height: 100vh;
   overflow-x: hidden;
@@ -21,8 +19,12 @@ body {
 .navbar {
   transition: 0.2s;
   background-color: #231942;
-  padding: 0 2rem;
+  padding: 0 1rem;
   height: 56px;
+}
+
+.navbar-collapse.show ~ * {
+  margin-top: 0;
 }
 
 .navbar-brand {
@@ -30,6 +32,18 @@ body {
   font-weight: 800;
   font-size: 20pt;
   color: white !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-collapse {
+  background-color: #231942;
 }
 
 .nav-link {
@@ -40,7 +54,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0 1rem !important;
+  padding: 0.6rem 1rem !important;
 }
 
 .nav-link:hover {
@@ -57,6 +71,10 @@ body {
   stroke-linejoin: round;
 }
 
+#navbarMenu {
+  transition: 0.2s;
+}
+
 .btn-dark {
   background-color: white;
   width: 70px;
@@ -65,6 +83,7 @@ body {
   bottom: 0.9rem;
   right: 1rem;
   transition: transform 0.2s;
+  z-index: 9999;
 }
 
 .btn-dark:hover {
@@ -73,11 +92,10 @@ body {
 }
 
 #wrapper {
-  --card-size: 200px;
-  --gap: 20px;
-  --group-width: calc(var(--card-size) * 3 + var(--gap) * 2);
-  width: var(--group-width);
+  width: 100%;
+  max-width: 680px;
   margin: 50px auto 80px;
+  padding: 0 1rem;
   display: flex;
   flex-direction: column;
   gap: 60px;
@@ -99,12 +117,15 @@ body {
 
 .cards-row {
   display: flex;
-  gap: 30px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .skill-card {
-  width: 200px;
-  height: 200px;
+  flex: 1 1 160px;
+  min-width: 140px;
+  max-width: 200px;
+  aspect-ratio: 1 / 1;
   background-color: #000000;
   position: relative;
   cursor: pointer;
@@ -136,71 +157,96 @@ body {
   color: #7c6aff;
 }
 
-#cs   { background-image: url(./img/Csharp.png); background-size: 140px; background-position: center;}
-#c    { background-image: url(./img/C.png);background-size: 140px; background-position: center;}
-#sh   { background-image: url(./img/bash.png); background-size: 150px; background-position: center;}
-#html { background-image: url(./img/html.webp); background-size: 160px; background-position: center;}
-#css  { background-image: url(./img/css.webp);  background-size: 170px; background-position: center;}
-#js   { background-image: url(./img/js.png); background-size: 140px; background-position: center;}
-#jv   { background-image: url(./img/java.png); background-size: 90px; background-position: center;}
-#ard  { background-image: url(./img/arduino.png); background-size: 140px; background-position: center;}
-#tink { background-image: url(./img/tinkercad.webp); background-size: 130px; background-position: center;}
-#vscode { background-image: url(./img/vscode.png);   background-size: 130px; background-position: center; }
-#vs     { background-image: url(./img/vs.webp);        background-size: 130px; background-position: center; }
-#davinci{ background-image: url(./img/davinci.png);   background-size: 150px; background-position: center; }
+#cs   { 
+  background-image: url(./img/Csharp.png);    
+  background-size: 60%; background-position: center; }
+#c    { 
+  background-image: url(./img/C.png);         
+  background-size: 60%; background-position: center; }
+#sh   { 
+  background-image: url(./img/bash.png);      
+  background-size: 65%; background-position: center; }
+#html { 
+  background-image: url(./img/html.webp);     
+  background-size: 70%; background-position: center; }
+#css  { 
+  background-image: url(./img/css.webp);      
+  background-size: 75%; background-position: center; }
+#js   { 
+  background-image: url(./img/js.png);        
+  background-size: 60%; background-position: center; }
+#jv   { 
+  background-image: url(./img/java.png);      
+  background-size: 45%; background-position: center; }
+#ard  { 
+  background-image: url(./img/arduino.png);   
+  background-size: 60%; background-position: center; }
+#tink { 
+  background-image: url(./img/tinkercad.webp);
+  background-size: 58%; background-position: center; }
+#vscode  { 
+  background-image: url(./img/vscode.png); 
+  background-size: 58%; background-position: center; }
+#vs      { 
+  background-image: url(./img/vs.webp);    
+  background-size: 58%;
+  background-position: center; }
+#davinci { 
+  background-image: url(./img/davinci.png);
+  background-size: 65%;
+  background-position: center; }
 
-#vscode:hover  { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5); }
-#vs:hover      { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(104, 33, 122, 0.5); }
-#davinci:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 90, 50, 0.5); }
+/* ── Hover effects ────────────────────────────────── */
+#cs:hover      { 
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(104, 3, 219, 0.5); 
+}
+#c:hover       { 
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(5, 164, 221, 0.5); }
+#sh:hover      { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(32, 252, 143, 0.5); }
+#html:hover    { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(229, 88, 18, 0.5); }
+#css:hover     { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(63, 167, 214, 0.5); }
+#js:hover      { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(253, 231, 76, 0.5); }
+#jv:hover      { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(221, 45, 74, 0.5); }
+#ard:hover     { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(40, 175, 176, 0.5); }
+#tink:hover    { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(97, 208, 149, 0.5); }
+#vscode:hover  { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(0, 122, 204, 0.5); }
+#vs:hover{ 
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(104, 33, 122, 0.5); 
+}
+#davinci:hover { 
+  
+  transform: translateY(-5px); 
+  box-shadow: 0 10px 30px rgba(255, 90, 50, 0.5); }
 
-/* Animazione cambio tema */
 body, .card, .accordion-button, .accordion-body, .accordion-item {
   transition: background-color 0.4s ease, color 0.4s ease, box-shadow 0.2s;
-}
-
-#cs:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(104, 3, 219, 0.5);
-}
-
-#c:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(5, 164, 221, 0.5);
-}
-
-#sh:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(32, 252, 143, 0.5);
-}
-
-#html:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(229, 88, 18, 0.5);
-}
-
-#css:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(63, 167, 214, 0.5);
-}
-
-#js:hover{
-    transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(253, 231, 76, 0.5);
-}
-
-#jv:hover{
-    transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(221, 45, 74, 0.5);
-}
-
-#ard:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(40, 175, 176, 0.5);
-}
-
-#tink:hover{
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(97, 208, 149, 0.5);
 }
 
 .skill-accordion {
@@ -248,7 +294,6 @@ body, .card, .accordion-button, .accordion-body, .accordion-item {
   border-top: 1px solid #2a2540;
 }
 
-
 footer {
   background-color: #171A21;
   color: white;
@@ -259,11 +304,15 @@ footer {
 footer .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
   position: relative;
 }
 
 footer p {
   margin-bottom: 0;
+  font-size: 0.9rem;
 }
 
 .icons {
@@ -297,8 +346,8 @@ footer p {
   text-align: center;
 }
 
-.bi-instagram {
-  margin: 0 auto;
+.footer-spacer {
+  width: 200px;
 }
 
 .footer-strip {
@@ -307,4 +356,82 @@ footer p {
   font-family: 'Space Mono', monospace;
   font-size: 0.7rem;
   color: #888888;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    height: auto;
+    min-height: 56px;
+  }
+
+  .navbar-collapse {
+    padding-bottom: 0.5rem;
+  }
+
+  .me-auto{
+    display: none;
+  }
+
+  footer{
+    height: 100px;
+  }
+
+  .icons{
+    top: 3px;
+  }
+}
+
+@media (max-width: 700px){
+    .btn-dark{
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  #wrapper {
+    gap: 40px;
+    margin-top: 30px;
+  }
+
+
+  .cards-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .skill-card {
+    flex: unset;
+    min-width: unset;
+    max-width: unset;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .accordion-button {
+    font-size: 0.75rem;
+    padding: 11px 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .me-auto {
+    text-align: center;
+  }
+
+  .icons {
+    position: static;
+    transform: none;
+  }
+
+  .footer-spacer {
+    display: none;
+  }
 }

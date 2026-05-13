@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-a{
+a {
   text-decoration: none;
   color: inherit;
 }
@@ -19,8 +19,12 @@ body {
 .navbar {
   transition: 0.2s;
   background-color: #231942;
-  padding: 0 2rem;
+  padding: 0 1rem;
   height: 56px;
+}
+
+.navbar-collapse.show ~ * {
+  margin-top: 0;
 }
 
 .navbar-brand {
@@ -28,6 +32,18 @@ body {
   font-weight: 800;
   font-size: 20pt;
   color: white !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+.navbar-collapse {
+  background-color: #231942;
 }
 
 .nav-link {
@@ -38,7 +54,7 @@ body {
   display: flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0 1rem !important;
+  padding: 0.6rem 1rem !important;
 }
 
 .nav-link:hover {
@@ -55,11 +71,15 @@ body {
   stroke-linejoin: round;
 }
 
+#navbarMenu{
+  transition: 0.2s;
+}
+
 .sezione {
-  height: calc(100vh - 56px);
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 2rem 1rem;
 }
 
 .card {
@@ -67,7 +87,7 @@ body {
   background-color: #000000;
   border: none;
   width: 800px;
-  height: 75vh;
+  height: fit-content;
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -81,6 +101,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   text-align: center;
+  margin-bottom: 1rem;
 }
 
 .card-text {
@@ -88,6 +109,7 @@ body {
   font-size: 1rem;
   color: #ffffff;
   text-align: center;
+  line-height: 1.7;
 }
 
 .prosegui-container {
@@ -96,6 +118,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   padding-bottom: 1rem;
+  padding-top: 1.5rem;
 }
 
 .prosegui {
@@ -154,11 +177,15 @@ footer {
 footer .container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
   position: relative;
 }
 
 footer p {
   margin-bottom: 0;
+  font-size: 0.9rem;
 }
 
 .icons {
@@ -192,8 +219,8 @@ footer p {
   text-align: center;
 }
 
-.bi-instagram {
-  margin: 0 auto;
+.footer-spacer {
+  width: 200px;
 }
 
 .footer-strip {
@@ -202,4 +229,72 @@ footer p {
   font-family: 'Space Mono', monospace;
   font-size: 0.7rem;
   color: #888888;
+}
+
+@media (max-width: 992px) {
+  .navbar {
+    height: auto;
+    min-height: 56px;
+  }
+
+  .navbar-collapse {
+    padding-bottom: 0.5rem;
+  }
+
+  .card-title {
+    font-size: 2rem;
+  }
+
+  .me-auto{
+    display: none;
+  }
+
+  footer{
+    height: 100px;
+  }
+
+  .icons{
+    top: 3px;
+  }
+}
+
+@media (max-width: 700px){
+    .btn-dark{
+    width: 50px;
+    height: 50px;
+  }
+}
+
+@media (max-width: 576px) {
+  .card-title {
+    font-size: 1.6rem;
+    letter-spacing: 0.05em;
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+  }
+
+  .sezione {
+    padding: 1.5rem 0.5rem;
+  }
+
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  footer .me-auto {
+    text-align: center;
+  }
+
+  .icons {
+    position: static;
+    transform: none;
+  }
+
+  .footer-spacer {
+    display: none;
+  }
 }
